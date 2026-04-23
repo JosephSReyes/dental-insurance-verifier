@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="ui-sans-serif,system-ui,Arial,sans-serif">
+
+  <defs>
+    <marker id="arrG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#10B981"/></marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F8FAFC"/>
+
+  <!-- HEADER -->
+  <rect width="800" height="66" fill="#0F172A"/>
+  <rect y="63" width="800" height="3" fill="#10B981"/>
+  <text x="28" y="36" font-size="19" font-weight="700" fill="#F1F5F9">The Solution</text>
+  <text x="28" y="55" font-size="12" fill="#F1F5F9">Any carrier format in. One standardized verification form out. Accuracy that improves over time.</text>
+
+  <!-- ─────────────────────────────────────────────
+       BEFORE  (left column, x=16, w=340)
+  ───────────────────────────────────────────── -->
+  <rect x="16" y="82" width="340" height="292" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- "BEFORE" badge -->
+  <rect x="28" y="92" width="56" height="18" rx="4" fill="#EF4444"/>
+  <text x="56" y="105" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">BEFORE</text>
+  <text x="96" y="105" font-size="11" font-weight="700" fill="#374151">Carrier data: raw, inconsistent</text>
+
+  <!-- BCBS snippet -->
+  <rect x="28" y="118" width="316" height="46" rx="6" fill="#F8FAFC" stroke="#DBEAFE" stroke-width="1"/>
+  <rect x="28" y="118" width="4" height="46" rx="2" fill="#1E40AF"/>
+  <text x="40" y="132" font-size="9" font-weight="700" fill="#94A3B8">BCBS (HTML Portal)</text>
+  <text x="40" y="147" font-size="10" font-weight="600" fill="#1E40AF">member_id</text>
+  <text x="100" y="147" font-size="10" fill="#94A3B8">·</text>
+  <text x="110" y="147" font-size="10" fill="#374151">MM/DD/YYYY</text>
+  <text x="40" y="159" font-size="10" fill="#374151">{ deductible: "$50", in_network_pct: "100" }</text>
+
+  <!-- UHC snippet -->
+  <rect x="28" y="172" width="316" height="46" rx="6" fill="#F8FAFC" stroke="#FED7AA" stroke-width="1"/>
+  <rect x="28" y="172" width="4" height="46" rx="2" fill="#9A3412"/>
+  <text x="40" y="186" font-size="9" font-weight="700" fill="#94A3B8">UHC (Web Portal)</text>
+  <text x="40" y="201" font-size="10" font-weight="600" fill="#9A3412">subscriberId</text>
+  <text x="104" y="201" font-size="10" fill="#94A3B8">·</text>
+  <text x="114" y="201" font-size="10" fill="#374151">YYYY-MM-DD</text>
+  <text x="40" y="213" font-size="10" fill="#374151">{ deductibleAmt: "50.00", inNetworkPct: "1.00" }</text>
+
+  <!-- Cigna snippet -->
+  <rect x="28" y="226" width="316" height="46" rx="6" fill="#F8FAFC" stroke="#A7F3D0" stroke-width="1"/>
+  <rect x="28" y="226" width="4" height="46" rx="2" fill="#065F46"/>
+  <text x="40" y="240" font-size="9" font-weight="700" fill="#94A3B8">Cigna (JSON + PDF)</text>
+  <text x="40" y="255" font-size="10" font-weight="600" fill="#065F46">insured_id</text>
+  <text x="92" y="255" font-size="10" fill="#94A3B8">·</text>
+  <text x="102" y="255" font-size="10" fill="#374151">ISO 8601</text>
+  <text x="40" y="267" font-size="10" fill="#374151">{ annual_deductible: 50, preventive_cov: "100%" }</text>
+
+  <!-- Aetna snippet -->
+  <rect x="28" y="280" width="316" height="46" rx="6" fill="#F8FAFC" stroke="#DDD6FE" stroke-width="1"/>
+  <rect x="28" y="280" width="4" height="46" rx="2" fill="#6D28D9"/>
+  <text x="40" y="294" font-size="9" font-weight="700" fill="#94A3B8">Aetna (PDF + Images)</text>
+  <text x="40" y="309" font-size="10" font-weight="600" fill="#6D28D9">memberNumber</text>
+  <text x="118" y="309" font-size="10" fill="#94A3B8">·</text>
+  <text x="128" y="309" font-size="10" fill="#374151">M/D/YYYY</text>
+  <text x="40" y="321" font-size="10" fill="#374151">{ deductible_amt: "$50", covg_preventive: "100" }</text>
+
+  <text x="186" y="354" text-anchor="middle" font-size="10" fill="#94A3B8">staff manually reads and reconciles all of these</text>
+  <text x="186" y="368" text-anchor="middle" font-size="9" fill="#DC2626">5–10 min per patient · transcription errors · denied claims</text>
+
+  <!-- ─────────────────────────────────────────────
+       CENTER ARROW
+  ───────────────────────────────────────────── -->
+  <line x1="362" y1="228" x2="426" y2="228" stroke="#10B981" stroke-width="3" marker-end="url(#arrG)"/>
+  <rect x="356" y="206" width="76" height="14" rx="4" fill="#F0FDF4"/>
+  <text x="394" y="217" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">7 LLM AGENTS</text>
+  <rect x="356" y="222" width="76" height="12" rx="3" fill="#F0FDF4"/>
+  <text x="394" y="232" text-anchor="middle" font-size="8" fill="#065F46">STANDARDIZE</text>
+
+  <!-- ─────────────────────────────────────────────
+       AFTER  (right column, x=430, w=354)
+  ───────────────────────────────────────────── -->
+  <rect x="430" y="82" width="354" height="292" rx="8" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+
+  <!-- "AFTER" badge -->
+  <rect x="442" y="92" width="48" height="18" rx="4" fill="#10B981"/>
+  <text x="466" y="105" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">AFTER</text>
+  <text x="502" y="105" font-size="11" font-weight="700" fill="#15803D">StandardVerificationData — every carrier</text>
+
+  <!-- Standard form preview -->
+  <rect x="442" y="118" width="330" height="236" rx="6" fill="#FFFFFF" stroke="#D1FAE5" stroke-width="1"/>
+  <text x="452" y="136" font-size="9" font-weight="700" fill="#64748B">STANDARD FORM OUTPUT (same schema, always)</text>
+  <line x1="442" y1="142" x2="772" y2="142" stroke="#E2E8F0" stroke-width="1"/>
+
+  <text x="452" y="160" font-size="10" fill="#94A3B8">subscriber_id:</text>
+  <text x="550" y="160" font-size="10" font-weight="600" fill="#15803D">"ABC123"</text>
+  <text x="452" y="176" font-size="10" fill="#94A3B8">insurance_company:</text>
+  <text x="578" y="176" font-size="10" font-weight="600" fill="#15803D">"Blue Cross Blue Shield"</text>
+  <text x="452" y="192" font-size="10" fill="#94A3B8">network_status:</text>
+  <text x="555" y="192" font-size="10" font-weight="600" fill="#15803D">"In-Network PPO"</text>
+  <text x="452" y="208" font-size="10" fill="#94A3B8">yearly_maximum:</text>
+  <text x="557" y="208" font-size="10" font-weight="600" fill="#15803D">"$2,000"</text>
+  <text x="452" y="224" font-size="10" fill="#94A3B8">yearly_deductible:</text>
+  <text x="566" y="224" font-size="10" font-weight="600" fill="#15803D">"$50"</text>
+  <text x="452" y="240" font-size="10" fill="#94A3B8">preventive_coverage:</text>
+  <text x="576" y="240" font-size="10" font-weight="600" fill="#15803D">"100%"</text>
+  <text x="452" y="256" font-size="10" fill="#94A3B8">basic_coverage:</text>
+  <text x="550" y="256" font-size="10" font-weight="600" fill="#15803D">"80%"</text>
+  <text x="452" y="272" font-size="10" fill="#94A3B8">major_coverage:</text>
+  <text x="552" y="272" font-size="10" font-weight="600" fill="#15803D">"50%"</text>
+  <text x="452" y="288" font-size="10" fill="#94A3B8">waiting_period:</text>
+  <text x="549" y="288" font-size="10" font-weight="600" fill="#DC2626">"12 months (major)"</text>
+  <text x="452" y="304" font-size="10" fill="#94A3B8">qa_score:</text>
+  <text x="516" y="304" font-size="10" font-weight="600" fill="#15803D">0.97</text>
+  <text x="541" y="304" font-size="9" fill="#94A3B8">· confidence: high</text>
+  <text x="452" y="320" font-size="10" fill="#94A3B8">D2740 crown:</text>
+  <text x="532" y="320" font-size="10" font-weight="600" fill="#15803D">covered · 50% · no waiting period</text>
+  <text x="452" y="336" font-size="10" fill="#94A3B8">D0220 x-ray:</text>
+  <text x="528" y="336" font-size="10" font-weight="600" fill="#15803D">covered · 100% · preventive</text>
+  <text x="452" y="352" font-size="9" fill="#94A3B8">effective_date · termination_date · claims_address · payor_id ···</text>
+
+  <text x="607" y="368" text-anchor="middle" font-size="10" fill="#15803D">available before appointment · no portal login</text>
+
+  <!-- ─────────────────────────────────────────────
+       BOTTOM BENEFITS  (y=390-460)
+  ───────────────────────────────────────────── -->
+  <rect x="16" y="390" width="235" height="70" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="133" y="410" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">No Manual Entry</text>
+  <text x="133" y="428" text-anchor="middle" font-size="10" fill="#64748B">Staff never touches a carrier portal.</text>
+  <text x="133" y="444" text-anchor="middle" font-size="10" fill="#64748B">Pipeline runs autonomously end-to-end.</text>
+
+  <rect x="263" y="390" width="274" height="70" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="400" y="410" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">Any Carrier, Same Schema</text>
+  <text x="400" y="428" text-anchor="middle" font-size="10" fill="#64748B">BCBS, UHC, Cigna, Aetna, Delta — all produce</text>
+  <text x="400" y="444" text-anchor="middle" font-size="10" fill="#64748B">the identical StandardVerificationData format.</text>
+
+  <rect x="549" y="390" width="235" height="70" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="666" y="410" text-anchor="middle" font-size="12" font-weight="700" fill="#374151">Gets Better Over Time</text>
+  <text x="666" y="428" text-anchor="middle" font-size="10" fill="#64748B">Staff corrections are vector-embedded.</text>
+  <text x="666" y="444" text-anchor="middle" font-size="10" fill="#64748B">LLM agents learn from each correction.</text>
+
+  <!-- FOOTER -->
+  <rect y="470" width="800" height="30" fill="#F0FDF4"/>
+  <rect y="470" width="800" height="2" fill="#10B981"/>
+  <text x="400" y="490" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">One submission. Any carrier. Standardized output. Verified before the patient arrives.</text>
+
+</svg>

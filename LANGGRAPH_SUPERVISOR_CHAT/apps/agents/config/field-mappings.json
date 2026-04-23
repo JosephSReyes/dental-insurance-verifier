@@ -1,0 +1,140 @@
+{
+  "version": "1.0.0",
+  "description": "Field mapping patterns for domain-based data aggregation. These patterns determine how API response fields are categorized into patient, subscriber, coverage, plan, procedures, and limits domains.",
+  "mappings": [
+    {
+      "domain": "patient",
+      "description": "Fields related to patient/member demographic information",
+      "patterns": [
+        "patient",
+        "member",
+        "insured",
+        "enrollee",
+        "firstname",
+        "lastname",
+        "birthdate",
+        "dob",
+        "dateofbirth",
+        "personid",
+        "memberid",
+        "membername"
+      ]
+    },
+    {
+      "domain": "subscriber",
+      "description": "Fields related to policy subscriber/contract holder",
+      "patterns": [
+        "subscriber",
+        "policyholder",
+        "contractholder",
+        "subscribername",
+        "subscriberfirstname",
+        "subscriberlastname",
+        "subscriberdob",
+        "subscriberdateofbirth",
+        "contractid",
+        "groupnumber"
+      ]
+    },
+    {
+      "domain": "coverage",
+      "description": "Fields related to benefits and coverage levels",
+      "patterns": [
+        "coverage",
+        "benefit",
+        "coinsurance",
+        "copay",
+        "preventive",
+        "basic",
+        "major",
+        "diagnostic",
+        "network",
+        "ppo",
+        "hmo",
+        "premier",
+        "benefitcoverage",
+        "benefitpackage"
+      ]
+    },
+    {
+      "domain": "plan",
+      "description": "Fields related to insurance plan details",
+      "patterns": [
+        "plan",
+        "product",
+        "division",
+        "group",
+        "effectivedate",
+        "terminationdate",
+        "planname",
+        "grouptype",
+        "plantype",
+        "packageid"
+      ]
+    },
+    {
+      "domain": "procedures",
+      "description": "Fields related to procedure codes, history, and limitations",
+      "patterns": [
+        "procedure",
+        "treatment",
+        "code",
+        "procedurecode",
+        "treatmentcode",
+        "limitation",
+        "frequency",
+        "procedureclass",
+        "classification",
+        "history",
+        "servicedate",
+        "description",
+        "tooth",
+        "surface"
+      ]
+    },
+    {
+      "domain": "limits",
+      "description": "Fields related to maximums, deductibles, and accumulators",
+      "patterns": [
+        "maximum",
+        "deductible",
+        "accumulator",
+        "limit",
+        "maximumsdeductibles",
+        "yearlymaximum",
+        "yearlydeductible",
+        "used",
+        "remaining",
+        "available",
+        "balance"
+      ]
+    }
+  ],
+  "normalizationMap": {
+    "firstname": "firstName",
+    "first_name": "firstName",
+    "lastname": "lastName",
+    "last_name": "lastName",
+    "birthdate": "dateOfBirth",
+    "birth_date": "dateOfBirth",
+    "dateofbirth": "dateOfBirth",
+	"dob": "dateOfBirth",
+    "memberid": "subscriberId",
+    "subscriber_id": "subscriberId",
+    "groupnumber": "groupNumber",
+    "group_number": "groupNumber",
+    "subscribername": "subscriberName",
+    "subscriber_name": "subscriberName",
+    "effectivedate": "effectiveDate",
+    "effective_date": "effectiveDate",
+    "terminationdate": "terminationDate",
+    "termination_date": "terminationDate",
+    "planname": "planName",
+    "plan_name": "planName",
+    "procedurecode": "procedureCode",
+    "procedure_code": "procedureCode",
+	"code": "procedureCode",
+    "treatmentcode": "treatmentCode",
+    "treatment_code": "treatmentCode"
+  }
+}

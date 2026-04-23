@@ -1,0 +1,23 @@
+pytesseract==0.3.13
+fpdf==1.7.2
+jinja2==3.1.6
+pandas==2.2.3
+python-dateutil==2.8.2
+pydantic==2.11.3
+
+# DeepAgents library (REQUIRED for Universal Login Agent)
+deepagents>=0.1.0
+
+# LangGraph and LangChain
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+
+# Browser automation
+playwright>=1.40.0
+
+# Additional utilities
+aiohttp>=3.9.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0

@@ -1,0 +1,86 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: insurance-verification-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-your-db-password}
+      POSTGRES_DB: insurance_verification
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./apps/agents/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d insurance_verification"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  # Label Studio for human annotation of LLM extractions
+  label-studio:
+    image: heartexlabs/label-studio:latest
+    container_name: insurance-label-studio
+    ports:
+      - "8081:8080"
+    environment:
+      # Database connection (using existing postgres service)
+      - DJANGO_DB=default
+      - POSTGRE_NAME=insurance_verification
+      - POSTGRE_USER=postgres
+      - POSTGRE_PASSWORD=${POSTGRES_PASSWORD:-your-db-password}
+      - POSTGRE_PORT=5432
+      - POSTGRE_HOST=postgres
+
+      # Label Studio settings
+      - LABEL_STUDIO_HOST=http://localhost:8081
+      - LABEL_STUDIO_USERNAME=${LABEL_STUDIO_USERNAME:-admin@example.com}
+      - LABEL_STUDIO_PASSWORD=${LABEL_STUDIO_PASSWORD:-changeme123}
+
+      # Storage
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/data
+
+      # Redis for caching
+      - REDIS_LOCATION=redis://redis:6379/0
+    volumes:
+      - label-studio-data:/label-studio/data
+      - ../label-studio-config:/label-studio/config:ro
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Redis for Label Studio caching and task queue
+  redis:
+    image: redis:7-alpine
+    container_name: insurance-redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - app-network
+    command: redis-server --appendonly yes
+
+  # NOTE: Using local Ollama instead of Docker container
+  # Local Ollama running at http://localhost:11434 with llama3.2:1b model
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  label-studio-data:
+    driver: local
+  redis-data:
+    driver: local

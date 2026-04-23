@@ -1,0 +1,10 @@
+{
+  "provider": "BCBS",
+  "portal_url": "https://www.dnoaconnect.com/#!/",
+  "credentials": {
+    "username": "TestUser",
+    "password": "TestPass123"
+  },
+  "office_key": "OFFICE_A",
+  "success_indicators": ["logout", "sign out", "dashboard", "home"]
+}

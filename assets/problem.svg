@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="ui-sans-serif,system-ui,Arial,sans-serif">
+
+  <!-- Background -->
+  <rect width="800" height="460" fill="#F8FAFC"/>
+
+  <!-- HEADER -->
+  <rect width="800" height="66" fill="#0F172A"/>
+  <rect y="63" width="800" height="3" fill="#EF4444"/>
+  <text x="28" y="36" font-size="19" font-weight="700" fill="#F1F5F9">The Problem</text>
+  <text x="28" y="55" font-size="12" fill="#F1F5F9">20 carriers. 20 portals. 20 different schemas. All verified by hand, every single day.</text>
+
+  <!-- SECTION LABEL -->
+  <text x="28" y="88" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="1.2">SAME DATA · FIVE COMPLETELY DIFFERENT FIELD NAMES AND PORTAL FORMATS</text>
+
+  <!-- 5 carrier cards (w=142, gap=12, x1=20) -->
+
+  <!-- BCBS -->
+  <rect x="20" y="96" width="142" height="108" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="20" y="96" width="142" height="32" rx="8" fill="#1E3A8A"/>
+  <rect x="20" y="116" width="142" height="12" fill="#1E3A8A"/>
+  <text x="91" y="113" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">BCBS</text>
+  <text x="91" y="126" text-anchor="middle" font-size="9" fill="#BFDBFE">HTML Portal</text>
+  <text x="32" y="148" font-size="9" fill="#94A3B8">member ID field:</text>
+  <text x="32" y="163" font-size="12" font-weight="700" fill="#1E40AF">member_id</text>
+  <text x="32" y="181" font-size="9" fill="#94A3B8">date: MM/DD/YYYY</text>
+  <text x="32" y="196" font-size="9" fill="#94A3B8">benefits: nested HTML table</text>
+
+  <!-- UHC -->
+  <rect x="174" y="96" width="142" height="108" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="174" y="96" width="142" height="32" rx="8" fill="#9A3412"/>
+  <rect x="174" y="116" width="142" height="12" fill="#9A3412"/>
+  <text x="245" y="113" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">UHC</text>
+  <text x="245" y="126" text-anchor="middle" font-size="9" fill="#FED7AA">Web Portal</text>
+  <text x="186" y="148" font-size="9" fill="#94A3B8">member ID field:</text>
+  <text x="186" y="163" font-size="12" font-weight="700" fill="#9A3412">subscriberId</text>
+  <text x="186" y="181" font-size="9" fill="#94A3B8">date: YYYY-MM-DD</text>
+  <text x="186" y="196" font-size="9" fill="#94A3B8">benefits: flat HTML rows</text>
+
+  <!-- Cigna -->
+  <rect x="328" y="96" width="142" height="108" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="328" y="96" width="142" height="32" rx="8" fill="#065F46"/>
+  <rect x="328" y="116" width="142" height="12" fill="#065F46"/>
+  <text x="399" y="113" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Cigna</text>
+  <text x="399" y="126" text-anchor="middle" font-size="9" fill="#A7F3D0">JSON + PDF</text>
+  <text x="340" y="148" font-size="9" fill="#94A3B8">member ID field:</text>
+  <text x="340" y="163" font-size="12" font-weight="700" fill="#065F46">insured_id</text>
+  <text x="340" y="181" font-size="9" fill="#94A3B8">date: ISO 8601</text>
+  <text x="340" y="196" font-size="9" fill="#94A3B8">benefits: structured JSON</text>
+
+  <!-- Aetna -->
+  <rect x="482" y="96" width="142" height="108" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="482" y="96" width="142" height="32" rx="8" fill="#6D28D9"/>
+  <rect x="482" y="116" width="142" height="12" fill="#6D28D9"/>
+  <text x="553" y="113" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Aetna</text>
+  <text x="553" y="126" text-anchor="middle" font-size="9" fill="#DDD6FE">PDF + Images</text>
+  <text x="494" y="148" font-size="9" fill="#94A3B8">member ID field:</text>
+  <text x="494" y="163" font-size="12" font-weight="700" fill="#6D28D9">memberNumber</text>
+  <text x="494" y="181" font-size="9" fill="#94A3B8">date: M/D/YYYY</text>
+  <text x="494" y="196" font-size="9" fill="#94A3B8">benefits: scanned images</text>
+
+  <!-- Delta -->
+  <rect x="636" y="96" width="142" height="108" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="636" y="96" width="142" height="32" rx="8" fill="#0F766E"/>
+  <rect x="636" y="116" width="142" height="12" fill="#0F766E"/>
+  <text x="707" y="113" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Delta</text>
+  <text x="707" y="126" text-anchor="middle" font-size="9" fill="#99F6E4">EDI + Web</text>
+  <text x="648" y="148" font-size="9" fill="#94A3B8">member ID field:</text>
+  <text x="648" y="163" font-size="12" font-weight="700" fill="#0F766E">claimantId</text>
+  <text x="648" y="181" font-size="9" fill="#94A3B8">date: YYYYMMDD</text>
+  <text x="648" y="196" font-size="9" fill="#94A3B8">benefits: EDI 270 format</text>
+
+  <!-- STATS LABEL -->
+  <text x="28" y="222" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="1.2">THE DAILY COST OF DOING THIS BY HAND</text>
+
+  <!-- 4 stat boxes (w=184, gap=8) -->
+  <rect x="20" y="230" width="184" height="36" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="112" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#DC2626">5 – 10 min</text>
+  <text x="112" y="259" text-anchor="middle" font-size="9" fill="#64748B">per patient verification</text>
+
+  <rect x="212" y="230" width="184" height="36" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="304" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#DC2626">20+ daily</text>
+  <text x="304" y="259" text-anchor="middle" font-size="9" fill="#64748B">verifications per office</text>
+
+  <rect x="404" y="230" width="184" height="36" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="496" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#DC2626">100% manual</text>
+  <text x="496" y="259" text-anchor="middle" font-size="9" fill="#64748B">zero automation today</text>
+
+  <rect x="596" y="230" width="184" height="36" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="688" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#DC2626">$0 recovered</text>
+  <text x="688" y="259" text-anchor="middle" font-size="9" fill="#64748B">on denied post-service claims</text>
+
+  <!-- PAIN CARDS LABEL -->
+  <text x="28" y="284" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="1.2">WHY AUTOMATION IS HARD WITHOUT THE RIGHT ARCHITECTURE</text>
+
+  <!-- 3 pain cards (w=245, gap=12) -->
+
+  <rect x="20" y="292" width="245" height="120" rx="8" fill="#FFFFFF" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="32" y="315" font-size="13" font-weight="700" fill="#DC2626">No Shared API or Schema</text>
+  <text x="32" y="334" font-size="10" fill="#475569">Every carrier portal is a separate system.</text>
+  <text x="32" y="350" font-size="10" fill="#475569">No API contract, no shared field names.</text>
+  <text x="32" y="366" font-size="10" fill="#475569">Staff must manually navigate each one.</text>
+  <rect x="32" y="376" width="220" height="26" rx="5" fill="#FEF2F2"/>
+  <text x="142" y="393" text-anchor="middle" font-size="10" fill="#DC2626">20+ distinct portal flows · 0 automation</text>
+
+  <rect x="277" y="292" width="245" height="120" rx="8" fill="#FFFFFF" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="289" y="315" font-size="13" font-weight="700" fill="#DC2626">Transcription Creates Errors</text>
+  <text x="289" y="334" font-size="10" fill="#475569">Re-typing from portal to PMS creates</text>
+  <text x="289" y="350" font-size="10" fill="#475569">silent errors in coverage amounts,</text>
+  <text x="289" y="366" font-size="10" fill="#475569">procedure codes, and deductibles.</text>
+  <rect x="289" y="376" width="220" height="26" rx="5" fill="#FEF2F2"/>
+  <text x="399" y="393" text-anchor="middle" font-size="10" fill="#DC2626">Errors invisible until claim is denied</text>
+
+  <rect x="534" y="292" width="245" height="120" rx="8" fill="#FFFFFF" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="546" y="315" font-size="13" font-weight="700" fill="#DC2626">Denied Claims = Lost Revenue</text>
+  <text x="546" y="334" font-size="10" fill="#475569">Service delivered before verification</text>
+  <text x="546" y="350" font-size="10" fill="#475569">is confirmed. If coverage was wrong,</text>
+  <text x="546" y="366" font-size="10" fill="#475569">the payer denies — with no recourse.</text>
+  <rect x="546" y="376" width="220" height="26" rx="5" fill="#FEF2F2"/>
+  <text x="656" y="393" text-anchor="middle" font-size="10" fill="#DC2626">Revenue lost. Re-billing rarely succeeds.</text>
+
+  <!-- FOOTER -->
+  <rect y="428" width="800" height="32" fill="#F1F5F9"/>
+  <text x="400" y="449" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">Result: a manual bottleneck that compounds with every new patient, every new carrier, every single day</text>
+
+</svg>

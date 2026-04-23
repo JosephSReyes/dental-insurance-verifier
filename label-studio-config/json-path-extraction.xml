@@ -1,0 +1,169 @@
+<View>
+  <Style>
+    .lsf-main-content__annotation { padding: 20px; }
+    .htx-richtext { font-family: 'Monaco', 'Courier New', monospace; }
+    .field-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+    .correct-badge { background-color: #10b981; color: white; padding: 2px 8px; border-radius: 3px; }
+    .incorrect-badge { background-color: #ef4444; color: white; padding: 2px 8px; border-radius: 3px; }
+  </Style>
+
+  <Header value="🔍 JSON Path Extraction Validation"/>
+  <Header value="Validate the LLM's ability to extract insurance data from JSON structures" size="3"/>
+
+  <!-- Context Information -->
+  <View className="field-section" style="background-color: #f0f9ff;">
+    <Header value="📋 Verification Context"/>
+    <HyperText name="context" value="&lt;div&gt;
+      &lt;p&gt;&lt;strong&gt;Patient:&lt;/strong&gt; $patientName&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Insurance:&lt;/strong&gt; $insuranceProvider&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Portal:&lt;/strong&gt; $portalType&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Office:&lt;/strong&gt; $officeKey&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Field:&lt;/strong&gt; &lt;code&gt;$field&lt;/code&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Mapper:&lt;/strong&gt; &lt;code&gt;$mapper&lt;/code&gt;&lt;/p&gt;
+    &lt;/div&gt;"/>
+  </View>
+
+  <!-- Available JSON Paths -->
+  <View className="field-section" style="background-color: #fef3c7;">
+    <Header value="📊 Available JSON Paths (Sample - First 100)"/>
+    <Paragraphs name="paths" value="$flattenedPaths" layout="dialogue" showSubmitButton="false"/>
+  </View>
+
+  <!-- LLM Extraction Result -->
+  <View className="field-section" style="background-color: #f3e8ff;">
+    <Header value="🤖 LLM Extraction Result"/>
+    <HyperText name="extraction" value="&lt;div&gt;
+      &lt;p&gt;&lt;strong&gt;Extracted Value:&lt;/strong&gt; &lt;span class='correct-badge'&gt;$aiExtractedValue&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Source Path:&lt;/strong&gt; &lt;code style='background: #fde68a; padding: 2px 6px;'&gt;$aiSourcePath&lt;/code&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;AI Reasoning:&lt;/strong&gt; $aiReasoning&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;AI Confidence:&lt;/strong&gt; $aiConfidence&lt;/p&gt;
+    &lt;/div&gt;"/>
+  </View>
+
+  <!-- QA Information (if available) -->
+  <View className="field-section" style="background-color: #fee2e2;" visibleWhen="region-selected">
+    <Header value="⚠️ QA Flags"/>
+    <HyperText name="qa" value="&lt;div&gt;
+      &lt;p&gt;&lt;strong&gt;QA Score:&lt;/strong&gt; $qaScore / 100&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Issues:&lt;/strong&gt; $qaIssues&lt;/p&gt;
+    &lt;/div&gt;"/>
+  </View>
+
+  <!-- Annotation Questions -->
+  <View className="field-section" style="border: 2px solid #3b82f6;">
+    <Header value="✍️ Your Annotation"/>
+
+    <!-- Question 1: Path Quality -->
+    <Header value="1️⃣ Is the JSON path correct?" size="4"/>
+    <Choices name="pathQuality" toName="extraction" choice="single" required="true" showInline="false">
+      <Choice value="correct" hint="✅ LLM found the exact right JSON path"/>
+      <Choice value="incorrect" hint="❌ LLM used wrong path entirely"/>
+      <Choice value="partial" hint="⚠️ Path is incomplete or nested differently"/>
+      <Choice value="ambiguous" hint="❓ Multiple valid paths exist"/>
+    </Choices>
+
+    <!-- Question 2: Correct Path (conditional) -->
+    <View visibleWhen="choice-selected" whenTagName="pathQuality" whenChoiceValue="incorrect|partial">
+      <Header value="2️⃣ What is the correct JSON path?" size="4"/>
+      <TextArea name="correctPath" toName="extraction"
+                placeholder="Enter the correct JSON path (e.g., data.member.subscriber.firstName)"
+                required="true"
+                maxSubmissions="1"
+                editable="true"/>
+
+      <Header value="Why is this path better?" size="5"/>
+      <TextArea name="pathReasoning" toName="extraction"
+                placeholder="Explain why this path should be used instead"
+                required="true"/>
+    </View>
+
+    <!-- Question 3: Value Quality -->
+    <Header value="3️⃣ Is the extracted value correct?" size="4"/>
+    <Choices name="valueQuality" toName="extraction" choice="single" required="true" showInline="false">
+      <Choice value="exact" hint="✅ Perfect match - value is 100% correct"/>
+      <Choice value="format_issue" hint="📝 Value correct but formatting wrong (e.g., '100.00%' vs '100%')"/>
+      <Choice value="type_issue" hint="🔄 Type coercion problem (string vs number, date format, etc.)"/>
+      <Choice value="incorrect" hint="❌ Wrong value entirely"/>
+    </Choices>
+
+    <!-- Question 4: Corrected Value (conditional) -->
+    <View visibleWhen="choice-selected" whenTagName="valueQuality" whenChoiceValue="format_issue|type_issue|incorrect">
+      <Header value="4️⃣ What is the correct value?" size="4"/>
+      <TextArea name="correctValue" toName="extraction"
+                placeholder="Enter the correct value"
+                required="true"/>
+    </View>
+
+    <!-- Question 5: Search Strategy -->
+    <Header value="5️⃣ Search Strategy Evaluation" size="4"/>
+    <TextArea name="searchTermsUsed" toName="extraction"
+              placeholder="What search terms did the LLM likely use? (e.g., 'name', 'firstName', 'patient')"
+              rows="2"/>
+
+    <Choices name="searchEffectiveness" toName="extraction" choice="single" showInline="true">
+      <Choice value="effective" hint="✅ Search strategy worked well"/>
+      <Choice value="suboptimal" hint="⚠️ Could be improved"/>
+      <Choice value="ineffective" hint="❌ Wrong search approach"/>
+    </Choices>
+
+    <!-- Question 6: Better Search Terms (conditional) -->
+    <View visibleWhen="choice-selected" whenTagName="searchEffectiveness" whenChoiceValue="suboptimal|ineffective">
+      <Header value="6️⃣ What search terms would work better?" size="4"/>
+      <TextArea name="betterSearchTerms" toName="extraction"
+                placeholder="Suggest better search terms (comma-separated)"
+                required="true"/>
+    </View>
+
+    <!-- Question 7: Confidence Rating -->
+    <Header value="7️⃣ How confident are you in this assessment?" size="4"/>
+    <Rating name="humanConfidence" toName="extraction" maxRating="5"
+            icon="star" size="large" required="true"/>
+
+    <!-- Question 8: Portal-Specific Issues -->
+    <Header value="8️⃣ Portal-Specific Context" size="4"/>
+    <Choices name="portalQuirks" toName="paths" choice="multiple" showInline="false">
+      <Choice value="unusual_nesting" hint="Non-standard JSON structure or deep nesting"/>
+      <Choice value="missing_fields" hint="Expected fields are missing from API response"/>
+      <Choice value="version_change" hint="Portal API version changed - structure differs"/>
+      <Choice value="inconsistent_format" hint="Inconsistent data format across fields"/>
+    </Choices>
+
+    <TextArea name="portalNotes" toName="paths"
+              placeholder="Additional notes about this portal's data structure, quirks, or special handling needed"
+              rows="3"/>
+
+    <!-- Question 9: Reasoning Quality -->
+    <Header value="9️⃣ Is the LLM's reasoning sound?" size="4"/>
+    <Choices name="reasoningQuality" toName="extraction" choice="single" showInline="true">
+      <Choice value="excellent" hint="💯 Perfect reasoning"/>
+      <Choice value="good" hint="👍 Mostly correct"/>
+      <Choice value="flawed" hint="⚠️ Logical gaps"/>
+      <Choice value="incorrect" hint="❌ Wrong reasoning"/>
+    </Choices>
+
+    <!-- Question 10: Edge Case -->
+    <Header value="🔟 Is this an edge case worth documenting?" size="4"/>
+    <Choices name="edgeCase" toName="extraction" choice="single" showInline="true" required="true">
+      <Choice value="yes" hint="Yes - unusual pattern that needs special handling"/>
+      <Choice value="no" hint="No - standard case"/>
+    </Choices>
+
+    <View visibleWhen="choice-selected" whenTagName="edgeCase" whenChoiceValue="yes">
+      <Header value="Describe the edge case" size="5"/>
+      <TextArea name="edgeCaseDescription" toName="extraction"
+                placeholder="Describe the edge case and how to handle it properly in future extractions"
+                required="true"
+                rows="4"/>
+    </View>
+  </View>
+
+  <!-- Performance Metrics Display -->
+  <View className="field-section" style="background-color: #f1f5f9;">
+    <Header value="⏱️ Performance Metrics"/>
+    <HyperText name="performance" value="&lt;div&gt;
+      &lt;p&gt;&lt;strong&gt;Tool Calls:&lt;/strong&gt; $toolCallsCount&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Extraction Time:&lt;/strong&gt; $extractionTimeMs ms&lt;/p&gt;
+    &lt;/div&gt;"/>
+  </View>
+
+</View>

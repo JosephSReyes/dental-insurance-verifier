@@ -1,0 +1,57 @@
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Node modules
+node_modules/
+
+# IDE and editor files
+.idea/
+.vscode/
+
+# Claude Code settings
+.claude/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+
+# Build outputs
+dist/
+build/
+
+# Generated temporary files and zip archives
+%TEMP%*
+*.zip
+nul
+
+# PHI - patient data, forms, and feedback (never commit)
+LANGGRAPH_SUPERVISOR_CHAT/apps/agents/forms/
+LANGGRAPH_SUPERVISOR_CHAT/apps/agents/feedback/
+LANGGRAPH_SUPERVISOR_CHAT/apps/agents/patient_data/
+LANGGRAPH_SUPERVISOR_CHAT/apps/agents/dist-test/
+LANGGRAPH_SUPERVISOR_CHAT/feedback/
+LANGGRAPH_SUPERVISOR_CHAT/DOCS/
+portal_screenshots/
+debug/
+memories/
+TESTING_CHECKLIST.md
+
+# Local backup files
+LANGGRAPH_SUPERVISOR_CHAT/.env.backup
+LANGGRAPH_SUPERVISOR_CHAT/.env.postgres

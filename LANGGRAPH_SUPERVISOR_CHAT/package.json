@@ -1,0 +1,42 @@
+{
+  "name": "LANGGRAPH_SUPERVISOR_CHAT",
+  "author": "Your Name",
+  "private": true,
+  "scripts": {
+    "start": "node start-dev.js",
+    "dev": "concurrently \"turbo dev --filter=web\" \"turbo dev --filter=agents\"",
+    "build": "turbo build",
+    "turbo:command": "turbo",
+    "format": "turbo format",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@playwright/test": "^1.42.0",
+    "@tsconfig/recommended": "^1.0.8",
+    "@types/pg": "^8.15.6",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-no-instanceof": "^1.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "playwright": "^1.42.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.1",
+    "turbo": "latest",
+    "typescript": "^5"
+  },
+  "resolutions": {
+    "@langchain/core": "^0.3.42"
+  },
+  "packageManager": "pnpm@10.6.3",
+  "dependencies": {
+    "@langchain/community": "^0.3.35",
+    "pg": "^8.16.3",
+    "pgvector": "^0.2.1"
+  }
+}

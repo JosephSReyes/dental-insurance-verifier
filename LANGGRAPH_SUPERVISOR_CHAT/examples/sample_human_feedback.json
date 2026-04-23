@@ -1,0 +1,397 @@
+{
+  "verificationId": "AI-BCBS-DEMO-001",
+  "metadata": {
+    "verificationId": "AI-BCBS-DEMO-001",
+    "timestamp": "2025-11-04T00:23:13.718Z",
+    "requestContext": {
+      "patientName": "ALEX THOMPSON",
+      "patientDob": "1990-03-15",
+      "insuranceProvider": "Blue Cross Blue Shield Of Texas",
+      "dentalCodes": [],
+      "appointmentDate": "12/29/2025"
+    },
+    "qaResults": {
+      "score": 90,
+      "passed": false,
+      "criticalIssues": 1,
+      "warnings": 0,
+      "checksRun": 28,
+      "sectionScores": {
+        "Patient & Subscriber Information": 100,
+        "Insurance Information": 100,
+        "Coverage & Benefits": 89,
+        "Orthodontic Benefits": 100,
+        "Waiting Periods": 100,
+        "Procedure Details": 100,
+        "Treatment History": 100
+      }
+    }
+  },
+  "reviewerInfo": {
+    "reviewerId": "reviewer@example.com",
+    "reviewedAt": "2025-11-04T01:53:25.342Z",
+    "timeSpentSeconds": 67
+  },
+  "fieldCorrections": [],
+  "fieldReviews": [
+    {
+      "field": "patient_full_name",
+      "status": "unchecked",
+      "aiValue": "ALEX THOMPSON",
+      "humanValue": "ALEX THOMPSON"
+    },
+    {
+      "field": "patient_dob",
+      "status": "unchecked",
+      "aiValue": "1990-03-15",
+      "humanValue": "1990-03-15"
+    },
+    {
+      "field": "subscriber_name",
+      "status": "unchecked",
+      "aiValue": "MORGAN THOMPSON",
+      "humanValue": "MORGAN THOMPSON"
+    },
+    {
+      "field": "subscriber_dob",
+      "status": "unchecked",
+      "aiValue": "1985-06-22",
+      "humanValue": "1985-06-22"
+    },
+    {
+      "field": "member_id",
+      "status": "unchecked",
+      "aiValue": "987654321012345",
+      "humanValue": "987654321012345"
+    },
+    {
+      "field": "group_number",
+      "status": "unchecked",
+      "aiValue": "2025-11-04T00-22-50-558Z",
+      "humanValue": "2025-11-04T00-22-50-558Z"
+    },
+    {
+      "field": "insurance_company",
+      "status": "unchecked",
+      "aiValue": "Blue Cross Blue Shield Of Texas",
+      "humanValue": "Blue Cross Blue Shield Of Texas"
+    },
+    {
+      "field": "plan_name",
+      "status": "unchecked",
+      "aiValue": "DENTAL - Blue Dental - Preferred Provider Organization (PPO)",
+      "humanValue": "DENTAL - Blue Dental - Preferred Provider Organization (PPO)"
+    },
+    {
+      "field": "claims_address",
+      "status": "unchecked"
+    },
+    {
+      "field": "insurance_phone",
+      "status": "unchecked"
+    },
+    {
+      "field": "payor_id",
+      "status": "unchecked"
+    },
+    {
+      "field": "network_status",
+      "status": "unchecked"
+    },
+    {
+      "field": "fee_schedule",
+      "status": "unchecked"
+    },
+    {
+      "field": "benefit_period",
+      "status": "unchecked",
+      "aiValue": "Calendar Year",
+      "humanValue": "Calendar Year"
+    },
+    {
+      "field": "effective_date",
+      "status": "unchecked",
+      "aiValue": "2025-01-01",
+      "humanValue": "2025-01-01"
+    },
+    {
+      "field": "termination_date",
+      "status": "unchecked",
+      "aiValue": "9999-12-31",
+      "humanValue": "9999-12-31"
+    },
+    {
+      "field": "preventive_coverage",
+      "status": "unchecked",
+      "aiValue": "100%",
+      "humanValue": "100%"
+    },
+    {
+      "field": "basic_coverage",
+      "status": "unchecked",
+      "aiValue": "80%",
+      "humanValue": "80%"
+    },
+    {
+      "field": "major_coverage",
+      "status": "unchecked",
+      "aiValue": "50%",
+      "humanValue": "50%"
+    },
+    {
+      "field": "yearly_maximum",
+      "status": "unchecked",
+      "aiValue": "$2500",
+      "humanValue": "$2500"
+    },
+    {
+      "field": "yearly_maximum_used",
+      "status": "unchecked",
+      "aiValue": "$239.40",
+      "humanValue": "$239.40"
+    },
+    {
+      "field": "yearly_deductible",
+      "status": "unchecked",
+      "aiValue": "$50",
+      "humanValue": "$50"
+    },
+    {
+      "field": "yearly_deductible_used",
+      "status": "unchecked",
+      "aiValue": "$0",
+      "humanValue": "$0"
+    },
+    {
+      "field": "dependent_coverage_age",
+      "status": "unchecked",
+      "aiValue": "26",
+      "humanValue": "26"
+    },
+    {
+      "field": "missing_tooth_clause",
+      "status": "unchecked",
+      "aiValue": "No missing tooth clause policy found.",
+      "humanValue": "No missing tooth clause policy found."
+    },
+    {
+      "field": "ortho_lifetime_maximum",
+      "status": "unchecked",
+      "aiValue": "$0",
+      "humanValue": "$0"
+    },
+    {
+      "field": "ortho_coverage_percentage",
+      "status": "unchecked"
+    },
+    {
+      "field": "ortho_age_limit",
+      "status": "unchecked",
+      "aiValue": "19",
+      "humanValue": "19"
+    },
+    {
+      "field": "ortho_deductible",
+      "status": "unchecked",
+      "aiValue": "$0",
+      "humanValue": "$0"
+    },
+    {
+      "field": "ortho_payment_schedule",
+      "status": "unchecked",
+      "aiValue": "N/A",
+      "humanValue": "N/A"
+    },
+    {
+      "field": "waiting_periods.preventive",
+      "status": "unchecked",
+      "aiValue": "N/A",
+      "humanValue": "N/A"
+    },
+    {
+      "field": "waiting_periods.basic",
+      "status": "unchecked",
+      "aiValue": "N/A",
+      "humanValue": "N/A"
+    },
+    {
+      "field": "waiting_periods.major",
+      "status": "unchecked",
+      "aiValue": "N/A",
+      "humanValue": "N/A"
+    },
+    {
+      "field": "verified_by",
+      "status": "unchecked",
+      "aiValue": "AI Verification System",
+      "humanValue": "AI Verification System"
+    },
+    {
+      "field": "verification_date",
+      "status": "unchecked",
+      "aiValue": "2025-11-04T00:23:13.718Z",
+      "humanValue": "2025-11-04T00:23:13.718Z"
+    },
+    {
+      "field": "representative",
+      "status": "unchecked",
+      "aiValue": "AI Assistant",
+      "humanValue": "AI Assistant"
+    },
+    {
+      "field": "reference_number",
+      "status": "unchecked",
+      "aiValue": "AI-BCBS-DEMO-001",
+      "humanValue": "AI-BCBS-DEMO-001"
+    },
+    {
+      "field": "procedure_details[0].code",
+      "status": "unchecked",
+      "aiValue": "D0120",
+      "humanValue": "D0120"
+    },
+    {
+      "field": "procedure_details[0].description",
+      "status": "unchecked",
+      "aiValue": "Periodic Oral Evaluation - Established Patient",
+      "humanValue": "Periodic Oral Evaluation - Established Patient"
+    },
+    {
+      "field": "procedure_details[0].category",
+      "status": "unchecked",
+      "aiValue": "Preventive",
+      "humanValue": "Preventive"
+    },
+    {
+      "field": "procedure_details[0].coverage_percent",
+      "status": "unchecked",
+      "aiValue": 100,
+      "humanValue": 100
+    },
+    {
+      "field": "procedure_details[0].network_used",
+      "status": "unchecked",
+      "aiValue": "in-network",
+      "humanValue": "in-network"
+    },
+    {
+      "field": "procedure_details[0].deductible_applies",
+      "status": "unchecked",
+      "aiValue": false,
+      "humanValue": false
+    },
+    {
+      "field": "procedure_details[0].maximum_applies",
+      "status": "unchecked",
+      "aiValue": true,
+      "humanValue": true
+    },
+    {
+      "field": "procedure_details[0].frequency_limitation",
+      "status": "unchecked",
+      "aiValue": "Limited to 2 every 1 benefit period",
+      "humanValue": "Limited to 2 every 1 benefit period"
+    },
+    {
+      "field": "procedure_details[0].frequency_shared_codes",
+      "status": "unchecked",
+      "aiValue": "D0145,D0150,D0160",
+      "humanValue": "D0145,D0150,D0160"
+    },
+    {
+      "field": "procedure_details[0].age_limitation",
+      "status": "unchecked",
+      "aiValue": null,
+      "humanValue": null
+    },
+    {
+      "field": "procedure_details[0].waiting_period",
+      "status": "unchecked",
+      "aiValue": null,
+      "humanValue": null
+    },
+    {
+      "field": "procedure_details[0].pre_auth_required",
+      "status": "unchecked",
+      "aiValue": false,
+      "humanValue": false
+    },
+    {
+      "field": "procedure_details[1].code",
+      "status": "unchecked",
+      "aiValue": "D0210",
+      "humanValue": "D0210"
+    },
+    {
+      "field": "procedure_details[1].description",
+      "status": "unchecked",
+      "aiValue": "Intraoral - Comprehensive Series Of Radiographic Images",
+      "humanValue": "Intraoral - Comprehensive Series Of Radiographic Images"
+    },
+    {
+      "field": "procedure_details[1].category",
+      "status": "unchecked",
+      "aiValue": "Diagnostic",
+      "humanValue": "Diagnostic"
+    },
+    {
+      "field": "procedure_details[1].coverage_percent",
+      "status": "unchecked",
+      "aiValue": 100,
+      "humanValue": 100
+    },
+    {
+      "field": "procedure_details[1].network_used",
+      "status": "unchecked",
+      "aiValue": "in-network",
+      "humanValue": "in-network"
+    },
+    {
+      "field": "procedure_details[1].deductible_applies",
+      "status": "unchecked",
+      "aiValue": false,
+      "humanValue": false
+    },
+    {
+      "field": "procedure_details[1].maximum_applies",
+      "status": "unchecked",
+      "aiValue": true,
+      "humanValue": true
+    },
+    {
+      "field": "procedure_details[1].frequency_limitation",
+      "status": "unchecked",
+      "aiValue": "Limited to 1 occurrence every 36 months",
+      "humanValue": "Limited to 1 occurrence every 36 months"
+    },
+    {
+      "field": "procedure_details[1].frequency_shared_codes",
+      "status": "unchecked",
+      "aiValue": "D0330,D7010,D7090,D0372,D0387",
+      "humanValue": "D0330,D7010,D7090,D0372,D0387"
+    },
+    {
+      "field": "procedure_details[1].age_limitation",
+      "status": "unchecked",
+      "aiValue": null,
+      "humanValue": null
+    },
+    {
+      "field": "procedure_details[1].waiting_period",
+      "status": "unchecked",
+      "aiValue": null,
+      "humanValue": null
+    },
+    {
+      "field": "procedure_details[1].pre_auth_required",
+      "status": "unchecked",
+      "aiValue": false,
+      "humanValue": false
+    }
+  ],
+  "qaCheckOverrides": [],
+  "overallApproval": "rejected",
+  "difficultyRating": 3,
+  "portalIssues": [],
+  "additionalNotes": ""
+}
