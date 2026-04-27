@@ -52,6 +52,9 @@ debug/
 memories/
 TESTING_CHECKLIST.md
 
+# Diagrams
+docs/diagrams/
+
 # Local backup files
 LANGGRAPH_SUPERVISOR_CHAT/.env.backup
 LANGGRAPH_SUPERVISOR_CHAT/.env.postgres
